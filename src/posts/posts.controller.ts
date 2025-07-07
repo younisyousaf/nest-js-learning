@@ -40,8 +40,8 @@ export class PostsController {
 
     @Delete(':id')
     @HttpCode(HttpStatus.NO_CONTENT)
-    remove(@Param('id', ParseIntPipe) id: number): void {
-        this.postsService.remove(id);
+    remove(@Param('id', ParseIntPipe) id: number): { message: string } {
+        return this.postsService.remove(id);
     }
 
 
